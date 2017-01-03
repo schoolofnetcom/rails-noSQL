@@ -1,0 +1,26 @@
+<h1>New task</h1>
+
+<%= form_for @task, :url => { :action => "create" } do |f| %>
+
+    <% if @task.errors.any? %>
+        <h4> <%= pluralize(@task.errors.count, "error") %></h4>
+
+        <ul>
+            <% @task.errors.each do |err| %>
+                <li> <%= err %></li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <br>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <br>
+
+    <%= f.submit %>
+<% end %>

@@ -1,0 +1,9 @@
+<h1>Show <%= @task._id %></h1>
+<br>
+<ul>
+    <li>Name: <%= @task.name %></li>
+    <li>Description: <%= @task.description %></li>
+</ul>
+<br>
+
+<%= link_to 'List all', task_index_path %>
